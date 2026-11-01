@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Te schrappen boodschappen</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<style>
+/* One column, two lists: what is already gone, and what is proposed to cut */
+:root{--bg:#f6f7f4;--fg:#1d2320;--muted:#66706a;--line:#dde2dc;--done:#2f7d4f;--todo:#b07d00;
+--display:"Archivo",system-ui,sans-serif;--body:"IBM Plex Sans",system-ui,sans-serif;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#141816;--fg:#e6ebe7;--muted:#97a29b;--line:#2c3430;--done:#6fcf97;--todo:#f0c53a;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.45}
+.wrap{max-width:40rem;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 48px}
+h1{font-family:var(--display);font-weight:800;font-size:1.7rem;margin:0 0 6px;text-wrap:balance}
+.lead{color:var(--muted);margin:0 0 24px}
+h2{font-family:var(--display);font-weight:600;font-size:1.05rem;margin:28px 0 4px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+h2 .pill{font-family:var(--body);font-weight:500;font-size:12px;padding:2px 8px;border-radius:999px;border:1px solid currentColor}
+.done h2 .pill{color:var(--done)} .todo h2 .pill{color:var(--todo)}
+.sub{color:var(--muted);font-size:13px;margin:0 0 8px}
+ul{list-style:none;margin:0;padding:0}
+li{display:grid;grid-template-columns:1fr auto;gap:12px;padding:9px 0;border-bottom:1px solid var(--line)}
+li .what{min-width:0}
+li .why{display:block;color:var(--muted);font-size:13px}
+li .amt{font-variant-numeric:tabular-nums;color:var(--muted);font-size:14px;text-align:right;white-space:nowrap}
+.done li .what{text-decoration:line-through;text-decoration-color:var(--done);text-decoration-thickness:2px}
+.total{display:flex;justify-content:space-between;padding-top:10px;font-weight:500;font-variant-numeric:tabular-nums}
+.note{color:var(--muted);font-size:13px;margin-top:28px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Te schrappen boodschappen</h1>
+<p class="lead">Vorige keer bleef er veel over van de lijst voor 12 volwassenen en 4 kinderen. Dit keer maken we geen pizza's en komen er lasagnes bij, dus deze producten kunnen van de Jumbo-bestelling af.</p>
+
+<section class="done">
+<h2>Al geschrapt <span class="pill">pizza-ingrediënten</span></h2>
+<p class="sub">Staat al niet meer in het mandje.</p>
+<ul>
+<li><span class="what">Dr. Oetker gist</span><span class="amt">1×</span></li>
+<li><span class="what">Tarwebloem 1 kg</span><span class="amt">1×</span></li>
+<li><span class="what">Volkoren tarwemeel 1 kg</span><span class="amt">2×</span></li>
+<li><span class="what">Galbani mozzarella maxi</span><span class="amt">2×</span></li>
+<li><span class="what">Basilicum</span><span class="amt">2×</span></li>
+<li><span class="what">Passata<span class="why">van 4 naar 2; de 2 die blijven zijn voor de lasagnes</span></span><span class="amt">−2</span></li>
+<li><span class="what">Pastasaus (pizzasaus)</span><span class="amt">2×</span></li>
+<li><span class="what">Truffelsalami</span><span class="amt">2×</span></li>
+<li><span class="what">Zwarte olijven plakjes</span><span class="amt">1×</span></li>
+<li><span class="what">Kappertjes</span><span class="amt">1×</span></li>
+<li><span class="what">Tonijn in water</span><span class="amt">2×</span></li>
+</ul>
+<div class="total"><span>Scheelt ongeveer</span><span>€ 31</span></div>
+</section>
+
+<section class="todo">
+<h2>Voorstel om te minderen <span class="pill">nog niet aangepast</span></h2>
+<p class="sub">Was vorige keer waarschijnlijk te veel.</p>
+<ul>
+<li><span class="what">Tripel Karmeliet 4-pack<span class="why">er komen 2 kratten pils bij, plus Leffe, Duvel en IJwit</span></span><span class="amt">8 → 3</span></li>
+<li><span class="what">Prosecco</span><span class="amt">10 → 6</span></li>
+<li><span class="what">Roomboter croissants (zak van 4)</span><span class="amt">8 → 5</span></li>
+<li><span class="what">Danio romige kwark</span><span class="amt">10 → 5</span></li>
+<li><span class="what">Port Salut</span><span class="amt">3 → 1</span></li>
+<li><span class="what">Eén blauwe kaas<span class="why">Castello Creamy Blue, Danablu en Gorgonzola is veel blauw</span></span><span class="amt">−1</span></li>
+<li><span class="what">Kruidnoten naturel<span class="why">de chocomix blijft</span></span><span class="amt">2 → 0</span></li>
+<li><span class="what">Penne<span class="why">met de lasagnes is een pastamaaltijd te veel</span></span><span class="amt">2 → 0</span></li>
+<li><span class="what">Paracetamol</span><span class="amt">3 → 1</span></li>
+</ul>
+<div class="total"><span>Zou ongeveer schelen</span><span>€ 105</span></div>
+</section>
+
+<p class="note">Bedragen zijn de Jumbo-prijzen van 1 november 2026, inclusief lopende aanbiedingen.</p>
+</div>
+</body>
+</html>
